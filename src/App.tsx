@@ -1,10 +1,10 @@
 import "./App.css";
-import Compont from "./components/Compont";
+import { Button } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <Compont />
+      <Button colorScheme="blue">Button</Button>
     </>
   );
 }
