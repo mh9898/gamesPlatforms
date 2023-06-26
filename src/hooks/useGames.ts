@@ -19,9 +19,10 @@ interface FetchGamesResponse {
 const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [errorMessage, setErrorMessage] = useState("");
-  const controller = new AbortController();
 
   useEffect(() => {
+    const controller = new AbortController();
+
     apiClient
       .get<FetchGamesResponse>("/games", { signal: controller.signal })
       .then((response) => setGames(response.data.results))
@@ -30,7 +31,7 @@ const useGames = () => {
         setErrorMessage(err.message);
       });
 
-    // return () => controller.abort();
+    return () => controller.abort();
   }, []);
 
   return { games, errorMessage };
