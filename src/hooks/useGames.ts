@@ -13,6 +13,7 @@ export interface Game {
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
+  metacritic: number;
   // "rating": 0,
   // "rating_top": 0,
 }
@@ -28,15 +29,18 @@ const useGames = () => {
 
   useEffect(() => {
     const controller = new AbortController();
-
+    const gameRespond = (response) => {
+      setGames(response.data.results);
+      console.log("games: ", games);
+    };
     apiClient
       .get<FetchGamesResponse>("/games", { signal: controller.signal })
-      .then((response) => setGames(response.data.results))
+      .then((response) => gameRespond(response))
       .catch((err) => {
         if (err instanceof CanceledError) return;
         setErrorMessage(err.message);
       });
-    console.log("games:", games);
+
     return () => controller.abort();
   }, []);
 
