@@ -1,6 +1,6 @@
 
 import { Table } from "@mantine/core";
-import { MoodSmile, MoodEmpty, MoodOff, MoodSad, CircleOff } from 'tabler-icons-react';
+import { MoodSmile, MoodEmpty, MoodSad, CircleOff } from 'tabler-icons-react';
 
 const TempModeResults = () => {
     return (

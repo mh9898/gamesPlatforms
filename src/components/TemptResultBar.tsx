@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress } from '@mantine/core';
 import {Box} from "@chakra-ui/react";
 

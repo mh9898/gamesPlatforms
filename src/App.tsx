@@ -1,12 +1,7 @@
 import "./App.css";
-import { Grid, GridItem, Show, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
-import TemptResultBar from "./components/TemptResultBar.tsx";
-import TempModeResults from "./components/TempModeResults.tsx";
-
-
-
 
 
 function App() {
@@ -22,10 +17,7 @@ function App() {
       </Show>
 
       <GridItem area="main">
-        <TemptResultBar/>
-        <TempModeResults/>
-
-        {/*<GameGrid />*/}
+        <GameGrid />
       </GridItem>
     </Grid>
   );
