@@ -8,6 +8,7 @@ import {Genre} from "./hooks/useGenres.ts";
 import PlatformSelector from "./components/PlatformSelector.tsx";
 import {Platform} from "./hooks/useGames.ts";
 import SortSelection from "./components/SortSelection.tsx";
+import GameHeading from "./components/GameHeading.tsx";
 
 export interface GameQuery{
     genre: Genre | null
@@ -39,6 +40,7 @@ function App() {
       </Show>
 
       <GridItem area="main">
+          <GameHeading gameQuery={gameQuery}/>
           <HStack padding={3}>
           <PlatformSelector
               selectedPlatform={gameQuery.platform}
