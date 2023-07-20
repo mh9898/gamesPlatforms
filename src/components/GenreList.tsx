@@ -8,9 +8,9 @@ interface Props {
 }
 
 const GenreList = ({selectedGenre ,onSelectedGenre}: Props) => {
-    const {data, isLoading, errorMessage} = useGenres()
+    const {data, isLoading, error} = useGenres()
 
-    if (errorMessage) return null
+    if (error) return null
 
     if (isLoading) return  <Spinner/>
 
